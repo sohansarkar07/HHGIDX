@@ -677,18 +677,112 @@ input:checked + .slider:before { transform: translateX(16px); }
 .back-face canvas { width: 100%; height: 100%; display: block; }
 
 /* ══════════════════════════════════════
-   RESPONSIVE — card fills screen width, fonts auto-scale
+   RESPONSIVE — mobile & tablet perfection
 ══════════════════════════════════════ */
-@media (max-width: 860px) {
-  .pfp-layout { display: grid; grid-template-columns: 1fr; }
-  .gen-preview { position: static; order: -1; }
-  /* card-w drives everything — height auto via calc(1.778) */
-  :root { --card-w: min(360px, 90vw); }
+@media (max-width: 900px) {
+  .gen-section {
+    padding: 40px 16px 80px;
+  }
+  .gen-header {
+    margin-bottom: 28px;
+    padding: 0 8px;
+  }
+  .gen-title {
+    font-size: clamp(30px, 8vw, 54px);
+    letter-spacing: 2px;
+  }
+  .gen-sub {
+    font-size: 13px;
+    padding: 0 8px;
+  }
+  .tab-bar-top {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  .gen-layout, .pfp-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .gen-preview {
+    position: static;
+    order: -1;
+    width: 100%;
+  }
+  .preview-topbar {
+    width: 100%;
+    max-width: var(--card-w);
+  }
+  .dl-section {
+    width: 100%;
+    max-width: var(--card-w);
+  }
+  .pfp-crop-circle {
+    width: 200px;
+    height: 200px;
+  }
+  :root {
+    --card-w: min(350px, 88vw);
+  }
 }
-@media (max-width: 430px) {
-  :root { --card-w: 88vw; }
-  .ov-serial { letter-spacing: 1px; }
-  .cta-btn { font-size: 18px; padding: 14px 28px; }
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(to bottom,
+      rgba(6,34,21,0) 0%,
+      transparent 30%,
+      rgba(6,34,21,0.5) 65%,
+      rgba(6,34,21,0.92) 85%,
+      #062215 100%);
+  }
+  .hero-cta {
+    bottom: 5%;
+    padding: 0 16px;
+  }
+  .hero-label {
+    font-size: 13px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  .cta-btn {
+    font-size: 17px;
+    padding: 12px 24px;
+    letter-spacing: 1.5px;
+  }
+  .prev-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+  .nav-link {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .nav-apply {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+  :root {
+    --card-w: 86vw;
+  }
+  .scene-3d {
+    padding: 16px 0;
+  }
+  .dl-btn {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
 }
 
 .site-footer {
