@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HH Goa 2026 – Builder ID Card Generator</title>
+  <meta name="description" content="Generate your official Hacker House Goa 2026 Builder ID Card. Upload your photo, download and share with #FrameInGoa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=151" />
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="https://hhgoa.com/" target="_blank" class="nav-link">CHECK HYPE</a>
+      <a href="https://forms.gle/jM5hTaGvsrfEfixPA" target="_blank" class="nav-apply">APPLY</a>
+    </div>
+  </nav>
+
+  <!-- HERO: Real landing page image -->
+  <header class="hero">
+    <div class="hero-bg">
+      <img src="dessign 2/Landing page/WhatsApp Image 2026-08-13 at 2.11.32 PM.jpeg"
+           alt="Hacker House Goa 2026 – Goa Beach Sunset Scene"
+           class="hero-bg-img" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-cta">
+      <p class="hero-label">Generate your official Builder ID Card</p>
+      <a href="#generator" class="cta-btn" id="ctaScroll">
+        Make My ID Card
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- GENERATOR -->
+  <main id="generator" class="gen-section">
+
+    <div class="gen-header">
+      <div class="gen-title-wrap">
+        <span class="gen-pre">HACKER HOUSE GOA 2026</span>
+        <h1 class="gen-title">BUILDER <span>ID</span> GENERATOR</h1>
+      </div>
+      <p class="gen-sub">Make your official builder ID for Goa 2026. Add a photo, name your stack,<br>download front and back. No login, nothing stored.</p>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="tab-bar-top">
+      <button class="tab-btn" id="tab3D">
+        3D ID Card
+      </button>
+      <button class="tab-btn active" id="tab2D">
+        2D ID Card
+      </button>
+      <button class="tab-btn" id="tabPFP">
+        PFP Frame
+      </button>
+    </div>
+
+    <div class="gen-layout" id="cardLayout">
+
+      <!-- ══ LEFT: CONTROLS ══ -->
+      <div class="gen-controls">
+
+        <!-- Step 1: Photo -->
+        <div class="ctrl-section">
+          <div class="ctrl-header">
+            <span class="ctrl-num">1</span>
+            <span class="ctrl-title">YOUR PHOTO</span>
+          </div>
+
+          <div class="upload-zone" id="uploadZone">
+            <input type="file" id="photoInput" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" hidden />
+            <div class="upload-empty" id="uploadEmpty">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="3"/>
+                <path d="M12 8v4M10 10l2-2 2 2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+              </svg>
+              <p class="upload-label">Upload your photo</p>
+              <p class="upload-hint">Drag &amp; drop, or click — PNG, JPG, WEBP, HEIC</p>
+            </div>
+            <div class="upload-filled" id="uploadFilled">
+              <img id="thumbImg" alt="Your photo" />
+              <button class="change-btn" id="changePhotoBtn">✎ Change</button>
+            </div>
+          </div>
+
+          <!-- Photo adjustment (hidden until photo uploaded) -->
+          <div class="photo-adj" id="photoAdj">
+            <div class="adj-row">
+              <label class="adj-label">ZOOM <span class="adj-val" id="zoomVal">1.0x</span></label>
+              <input type="range" id="zoomSlider" class="adj-slider" min="0.5" max="3" step="0.01" value="1" />
+            </div>
+            <div class="adj-row">
+              <label class="adj-label">ROTATE <span class="adj-val" id="rotVal">0°</span></label>
+              <input type="range" id="rotSlider" class="adj-slider" min="-180" max="180" step="1" value="0" />
+            </div>
+            <div class="adj-btns">
+              <button class="adj-btn" id="flipHBtn">↔ Flip H</button>
+              <button class="adj-btn" id="flipVBtn">↕ Flip V</button>
+              <button class="adj-btn" id="resetPhotoBtn">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Badge Details -->
+        <div class="ctrl-section">
+          <div class="ctrl-header">
+            <span class="ctrl-num">2</span>
+            <span class="ctrl-title">BADGE DETAILS</span>
+          </div>
+
+          <div class="field-grp">
+            <label class="field-lbl">FULL NAME</label>
+            <input type="text" id="inputName" class="field-inp" placeholder="Ada Lovelace" maxlength="20" />
+          </div>
+
+          <div class="field-grp">
+            <label class="field-lbl">ROLE / STACK</label>
+            <input type="text" id="inputTeam" class="field-inp" placeholder="AI Engineer" maxlength="36" />
+            <div class="chip-group" id="chipGroup">
+              <button class="chip" data-val="Fullstack">FULLSTACK</button>
+              <button class="chip" data-val="AI Engineer">AI ENGINEER</button>
+              <button class="chip" data-val="Smart Contracts">SMART CONTRACTS</button>
+              <button class="chip" data-val="Frontend">FRONTEND</button>
+              <button class="chip" data-val="Backend">BACKEND</button>
+              <button class="chip" data-val="Designer">DESIGNER</button>
+              <button class="chip" data-val="Founder">FOUNDER</button>
+              <button class="chip" data-val="DevOps">DEVOPS</button>
+            </div>
+          </div>
+
+          <div class="field-grp">
+            <label class="field-lbl">
+              BUILDER TITLE
+              <button class="reroll-btn" id="rerollBtn" title="Random title">🎲</button>
+            </label>
+            <input type="text" id="inputTitle" class="field-inp" placeholder="Midnight Innovator" maxlength="28" />
+          </div>
+
+          <div class="field-grp">
+            <label class="field-lbl">TEAM NAME</label>
+            <input type="text" id="inputTeamName" class="field-inp" placeholder="GOA BUILDERS" maxlength="24" />
+          </div>
+
+          <div class="field-grp serial-grp">
+            <label class="field-lbl">SERIAL</label>
+            <div class="serial-val" id="serialDisplay">#GOA-2026-0176A</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ══ RIGHT: 3D PREVIEW ══ -->
+      <div class="gen-preview">
+
+        <div class="preview-topbar">
+          <span class="preview-label">LIVE PREVIEW</span>
+          <div class="preview-ctrl-btns">
+            <button class="prev-btn" id="flipCardBtn">⟳ FLIP</button>
+            <button class="prev-btn" id="toggle3DBtn">◈ 3D</button>
+            <button class="prev-btn active" id="toggle2DBtn">◻ 2D</button>
+          </div>
+        </div>
+
+        <!-- 3D Scene — drag to spin -->
+        <div class="scene-3d" id="scene3d">
+          <div class="card-pivot" id="cardPivot">
+
+            <!-- FRONT FACE -->
+            <div class="card-face front-face">
+              <div class="card-wrap" id="cardWrap">
+                <!-- Real template image fills the card -->
+                <img src="id%20card%20%20theme/image.png?v=140" class="card-tmpl-img" id="tmplImg" alt="ID Card Template" crossorigin="anonymous" />
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://hhgoa.com" id="qrImg" crossorigin="anonymous" style="display:none;" />
+
+                <!-- Cream cover: hides the template placeholder texts -->
+                <div class="ov-cover" id="ovCover"></div>
+
+                <!-- Photo slot overlay -->
+                <div class="ov-photo" id="ovPhoto">
+                  <canvas id="photoSlot"></canvas>
+                  <!-- Placeholder shown when no photo: { l: 26, t: 41, w: 52, h: 31 }, -->
+                  <div class="photo-placeholder" id="photoPlaceholder">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2ec4b6" stroke-width="1.5">
+                      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                    </svg>
+                    <span>Upload photo</span>
+                  </div>
+                </div>
+
+                <!-- Name overlay -->
+                <div class="ov-name" id="ovName">YOUR NAME</div>
+
+                <!-- Team/Role row -->
+                <div class="ov-team-row" id="ovTeamRow">
+                  <span class="ov-pk">ROLE:</span>
+                  <span class="ov-tv" id="ovTeamVal">Add your role / stack</span>
+                </div>
+
+                <!-- Builder title -->
+                  <div class="ov-title-lbl">BUILDER TITLE:</div>
+                  <div class="ov-title-val" id="ovTitleVal"></div>
+                  
+                  <div class="ov-team-lbl">TEAM NAME:</div>
+                  <div class="ov-team-val" id="ovTeamNameVal">GOA BUILDERS</div>
+
+                  <div class="ov-serial" id="ovSerial"></div>
+                  
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://hhgoa.com" class="ov-qr" id="ovQrImg" crossorigin="anonymous" />
+                  <div class="ov-scan-badge">
+                    <svg class="scan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                    SCAN TO VERIFY
+                  </div>
+                </div>
+            </div>
+
+            <!-- BACK FACE -->
+            <div class="card-face back-face">
+              <canvas id="backCanvas" width="380" height="676"></canvas>
+            </div>
+
+          </div>
+        </div>
+
+        <p class="drag-hint">Drag the card to spin it · let go and it keeps turning</p>
+
+        <!-- Download & Share -->
+        <div class="dl-section">
+          <div class="dl-header">
+            <span class="dl-hd-dot"></span>
+            DOWNLOAD &amp; SHARE
+          </div>
+          <div class="dl-row">
+            <button class="dl-btn dl-front" id="dlFront">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13M5 14l7 7 7-7"/><path d="M3 21h18"/></svg>
+              FRONT
+            </button>
+            <button class="dl-btn dl-back" id="dlBack">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13M5 14l7 7 7-7"/><path d="M3 21h18"/></svg>
+              BACK
+            </button>
+          </div>
+          <button class="dl-btn dl-both" id="dlBoth">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13M5 14l7 7 7-7"/><path d="M3 21h18"/></svg>
+            BOTH SIDES
+          </button>
+          <button class="dl-btn dl-share" id="dlShare">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            SHARE TO X
+          </button>
+        </div>
+
+        <p class="share-preview" id="sharePreview"></p>
+
+      </div><!-- /gen-preview -->
+    </div><!-- /gen-layout -->
+
+    <!-- ══ PFP LAYOUT (Hidden by default) ══ -->
+    <div class="pfp-layout" id="pfpLayout" style="display: none;">
+      <!-- LEFT: PFP PREVIEW -->
+      <div class="pfp-preview">
+        <canvas id="pfpCanvas" width="1080" height="1080"></canvas>
+        <div class="dl-row" style="width: 100%; max-width: 500px;">
+          <button class="dl-btn pfp-dl" id="dlPfpBtn" style="flex:1;">DOWNLOAD PNG</button>
+          <button class="dl-btn dl-share" id="sharePfpBtn" style="flex:1; background:#000; color:#fff; border: 1px solid #333;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            SHARE TO X
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: PFP CONTROLS -->
+      <div class="pfp-controls">
+        <button class="change-photo-btn" id="pfpChangePhotoBtn">Change photo</button>
+        <p class="pfp-hint">JPG, PNG, WebP or HEIC from iPhone.</p>
+
+        <div class="pfp-position-card">
+          <div class="pfp-pos-header">POSITION YOUR PHOTO</div>
+          
+          <div class="pfp-kraft-toggle">
+            <div class="pfp-kraft-texts">
+              <div class="pfp-kraft-title">PUT ME ON KRAFT PAPER</div>
+              <div class="pfp-kraft-sub">Swaps your background for the card's paper</div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="kraftToggle">
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div class="pfp-crop-area">
+            <div class="pfp-crop-circle" id="pfpCropCircle">
+              <img id="pfpCropImg" src="" alt="crop preview" style="display:none;" />
+            </div>
+          </div>
+
+          <div class="pfp-crop-modes">
+            <button class="pfp-mode-btn" id="pfpModeWhole">Whole photo</button>
+            <button class="pfp-mode-btn active" id="pfpModeFill">Fill Frame</button>
+          </div>
+
+          <div class="adj-row pfp-zoom-row">
+            <label class="adj-label">ZOOM</label>
+            <input type="range" id="pfpZoomSlider" class="adj-slider" min="0.5" max="3" step="0.01" value="1" />
+            <button class="adj-reset" id="pfpResetBtn">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <span class="logo-time">2:47<sup>pm</sup></span>
+      <span class="logo-studio">BUILDERS</span>
+    </div>
+    <p class="footer-tag">Hacker House Goa 2026 &nbsp;·&nbsp; 28–31 Oct &nbsp;·&nbsp; <a href="https://hhgoa.com" target="_blank">hhgoa.com</a></p>
+    <p class="footer-hash">#FrameInGoa</p>
+  </footer>
+
+  <script src="app.js?v=151"></script>
+
+</body>
+</html>
