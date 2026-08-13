@@ -76,6 +76,7 @@ body {
   overflow: hidden;
   background: #062215;
   display: block;
+  padding-top: 60px;
 }
 .hero-bg { 
   position: relative; 
